@@ -1,5 +1,4 @@
 #!/usr/local/bin/bash
-#!/usr/local/bin/bash
 #
 # freebsdmotd v 0.61
 # author: Jakub 'samu' Szafranski
