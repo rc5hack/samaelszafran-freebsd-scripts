@@ -1,7 +1,6 @@
 #!/bin/sh
 #
-# service 0.1
-# author: Jakub 'samu' Szafranski <samu@pirc.pl>
+# based on service 0.1 by Jakub 'samu' Szafranski <samu@pirc.pl>
 #
 # Licence: Creative Commons Attribution-ShareAlike 3.0 Unported 
 # http://creativecommons.org/licenses/by-sa/3.0/
@@ -13,10 +12,9 @@
 # in both /etc/rc.d and /usr/local/etc/rc.d and
 # then execute it, optionally with a parameter ($2)
 #
-# eg. service nginx reload
-#     service abi start
+# eg. service mysqld stop
+#     service sshd restart
 #     service nginx
-#
 #
 
 DIR1="/etc/rc.d";
@@ -27,8 +25,8 @@ if [ -e "${DIR1}/${1}" ]; then
 else
 	if [ -e "${DIR2}/${1}" ]; then
 	        ${DIR2}/${1} ${2};
-		exit
-	fi
-echo "Nie ma takiego skryptu startowego!";
+	else
+        echo "No such script (${1}) found!";
+        exit 126
+    fi
 fi
-
