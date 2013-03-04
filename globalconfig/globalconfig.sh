@@ -20,11 +20,11 @@ miscnt=`echo $missing |wc -w |awk '{print $1}'`
 tmp=1
 
 for port in $missing; do
-	echo -n "[ ${tmp}/${miscnt} ] "
-	echo -n "${port} "
-	cd ${port}
-	/usr/bin/make config
-	tmp=$(( tmp + 1 ))
+    echo -n "[ ${tmp}/${miscnt} ] "
+    echo -n "${port} "
+    cd ${port}
+    /usr/bin/make config
+    tmp=$(( tmp + 1 ))
 done
 
 echo "Done. Port is ready to compile"
